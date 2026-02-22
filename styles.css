@@ -140,6 +140,25 @@ main {
   text-decoration: underline;
 }
 
+.publication-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pdf-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.publication-summary {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0.75rem 0 0;
+  line-height: 1.5;
+}
+
 .publication-meta {
   font-size: 0.85rem;
   color: var(--color-text-muted);
@@ -156,6 +175,125 @@ main {
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-size: 0.85em;
+}
+
+/* About */
+.about-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 560px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-photo img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.about-story p {
+  margin-bottom: 1.25rem;
+}
+
+.about-story p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-visuals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 600px) {
+  .about-visuals {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visual-card {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.visual-icon {
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.visual-card h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 0.35rem;
+}
+
+.visual-card p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.about-timeline {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-timeline h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0 0 1rem;
+}
+
+.timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
 }
 
 /* Footer */

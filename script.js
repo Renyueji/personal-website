@@ -17,18 +17,21 @@ function renderPublications(publications) {
 
   container.innerHTML = publications
     .map((p) => {
-      const authors = Array.isArray(p.authors) ? p.authors.join(', ') : p.authors || '';
+      const authors = Array.isArray(p.authors) ? p.authors.join(', ') : (p.authors || '');
       const venue = p.venue || p.journal || '';
       const year = p.year || '';
       const meta = [venue, year].filter(Boolean).join(', ');
-      const url = p.url || p.doi ? `https://doi.org/${p.doi}` : '';
-      const title = url ? `<a href="${url}" target="_blank" rel="noopener">${p.title}</a>` : p.title;
+      const url = p.url || (p.doi ? `https://doi.org/${p.doi}` : '');
+      const titleEl = url ? `<a href="${url}" target="_blank" rel="noopener">${p.title}</a>` : p.title;
+      const pdfLink = p.pdf ? `<a href="${p.pdf}" target="_blank" rel="noopener" class="pdf-link">[PDF]</a>` : '';
+      const summary = p.summary ? `<p class="publication-summary">${p.summary}</p>` : '';
 
       return `
         <div class="publication-item">
-          <div>${title}</div>
+          <div class="publication-title">${titleEl} ${pdfLink}</div>
           ${authors ? `<div class="publication-meta">${authors}</div>` : ''}
           ${meta ? `<div class="publication-meta">${meta}</div>` : ''}
+          ${summary}
         </div>
       `;
     })

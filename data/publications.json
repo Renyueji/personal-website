@@ -1,11 +1,23 @@
 {
   "publications": [
     {
-      "title": "Add your publication title here",
-      "authors": ["Renyue Ji", "Co-author 1", "Co-author 2"],
-      "venue": "Conference or Journal Name",
-      "year": "2025",
-      "url": "https://www.researchgate.net/...",
+      "title": "Acicular berthierine-chamosite in coal and lung cancer tissues of Xuan Wei, China",
+      "authors": [],
+      "venue": "HKU Scholars Hub",
+      "year": "",
+      "summary": "Investigates the occurrence of acicular berthierine-chamosite minerals in coal from Xuan Wei, Yunnan—a region with among the highest lung cancer rates in China. Links Fe-rich chamosite particles in domestic coal combustion to carcinogenic mechanisms and oxidative stress in bronchial epithelial cells.",
+      "pdf": "data/Acicular%20berthierine-chamosite%20in%20coal%20and%20lung%20cancer%20tissues%20of%20Xuan%20Wei,%20China.pdf",
+      "url": "https://hub.hku.hk/handle/10722/279747",
+      "doi": ""
+    },
+    {
+      "title": "Scaling green hydrogen and CCUS via cement-methanol co-production in China",
+      "authors": [],
+      "venue": "Energy & Environmental Science",
+      "year": "2026",
+      "summary": "Proposes integrated cement-methanol co-production pathways to scale green hydrogen and carbon capture, utilization, and storage (CCUS) in China, addressing decarbonization of industry and energy sectors.",
+      "pdf": "data/EES_zheshen_2026.pdf",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2026/ee/d5ee07379k",
       "doi": ""
     }
   ]

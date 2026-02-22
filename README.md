@@ -4,7 +4,7 @@ Minimal personal website inspired by [gao-jin.com](https://gao-jin.com/).
 
 ## Setup
 
-1. Add your **CV.pdf** to the `data/` folder.
+1. Your **CV** (`JI RENYUE_CV.pdf`) is in `data/`.
 2. Edit `data/publications.json` with your publications (or leave the placeholder).
 3. Customize `index.html` with your research interests, bio, and projects.
 
