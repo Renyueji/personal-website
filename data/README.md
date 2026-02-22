@@ -6,7 +6,7 @@ Place your content here to populate the personal website:
 - Your CV **`JI RENYUE_CV.pdf`** is linked from the main page and navigation. To change, update the links in `index.html` and this filename.
 
 ## Photo
-- Add **`photo.jpg`** for your profile picture in the About section (120×120px recommended). If missing, a placeholder is shown.
+- Profile picture is loaded from **`photos/18446744073086116956835505667.pdf`** (first page). For best display in all browsers, export the PDF to JPG and save as `photos/photo.jpg`, then update the site to use it.
 
 ## Publications
 - Option 1: Edit **`publications.json`** — the site will auto-load and display your papers.

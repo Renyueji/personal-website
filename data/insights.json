@@ -1,0 +1,10 @@
+{
+  "insights": [
+    {
+      "title": "Add your first essay or report",
+      "date": "2025",
+      "summary": "Edit data/insights.json to add your essays and reports. Each entry can have title, date, summary, and url.",
+      "url": ""
+    }
+  ]
+}

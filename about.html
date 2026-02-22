@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renyue Ji | About</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html">Renyue Ji</a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html" class="active">About</a>
+        <a href="data/JI%20RENYUE_CV.pdf" target="_blank">CV</a>
+        <a href="https://www.researchgate.net/scientific-contributions/Renyue-Ji-2289470138" target="_blank" rel="noopener">ResearchGate</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="https://github.com/Renyueji/personal-website">GitHub</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h1 class="page-title">About</h1>
+      <p class="page-subtitle">My background and research journey</p>
+
+      <section class="section">
+        <div class="about-layout">
+          <div class="profile-photo profile-photo--sm" id="about-photo">
+            <canvas id="about-canvas" width="140" height="140" style="display:none; width:140px; height:140px; object-fit:cover; border-radius:12px;"></canvas>
+            <a href="data/photos/18446744073086116956835505667.pdf" target="_blank" id="about-photo-fallback" class="photo-placeholder" style="display:none;">
+              <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="58" stroke="currentColor" stroke-width="2" opacity="0.3"/><circle cx="60" cy="45" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M30 110 Q60 75 90 110" stroke="currentColor" stroke-width="2" opacity="0.3" fill="none"/></svg>
+              <span>View photo (PDF)</span>
+            </a>
+          </div>
+          <div>
+            <p>My research journey sits at the intersection of Earth sciences, environmental health, and energy transitions—shaped by a simple question: how do the materials beneath our feet shape human health and the future of our planet?</p>
+            <p>I began in coal geology and mineralogy, drawn to the Late Permian coals of Yunnan. That work led me to <strong>Xuan Wei</strong>, a county with among the highest lung cancer rates in China, especially among women who burn local coal indoors. There, I traced the link between Fe-rich chamosite and berthierine in the coal and carcinogenic mineral particles released during combustion—nanometer-sized particles that trigger oxidative stress and malignant transformation. Understanding that chain drove home how deeply geology and human health are intertwined.</p>
+            <p>Today, I'm based at <strong>The University of Hong Kong</strong>, where my work has expanded to designing solutions: pathways to scale green hydrogen and CCUS in China, including integrated cement-methanol co-production. For more details, see my <a href="data/JI%20RENYUE_CV.pdf" target="_blank">CV</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="about-visuals">
+          <div class="visual-card">
+            <div class="visual-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4L4 10v12l12 6 12-6V10L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Coal & Mineralogy</h3>
+            <p>Late Permian coals, chamosite, berthierine, authigenic minerals</p>
+          </div>
+          <div class="visual-card">
+            <div class="visual-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Environmental Health</h3>
+            <p>Xuan Wei lung cancer, indoor combustion, oxidative stress</p>
+          </div>
+          <div class="visual-card">
+            <div class="visual-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2v4M16 26v4M4 16h4M24 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Energy Transitions</h3>
+            <p>Green hydrogen, CCUS, cement-methanol co-production</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="about-timeline">
+          <h3>Path</h3>
+          <div class="timeline-steps">
+            <div class="timeline-step"><span class="timeline-dot"></span><span>Earth sciences & coal mineralogy</span></div>
+            <div class="timeline-step"><span class="timeline-dot"></span><span>Xuan Wei: linking minerals to lung cancer</span></div>
+            <div class="timeline-step"><span class="timeline-dot"></span><span>Decarbonization & green energy pathways</span></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>© 2025 Renyue Ji</p>
+      </footer>
+    </main>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    (function() {
+      var canvas = document.getElementById('about-canvas');
+      var fallback = document.getElementById('about-photo-fallback');
+      if (!canvas || !fallback) return;
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      pdfjsLib.getDocument('data/photos/18446744073086116956835505667.pdf').promise
+        .then(function(pdf) { return pdf.getPage(1); })
+        .then(function(page) {
+          var v1 = page.getViewport({ scale: 1 });
+          var s = 140 / Math.max(v1.width, v1.height);
+          var viewport = page.getViewport({ scale: s });
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          return page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }).promise;
+        })
+        .then(function() { canvas.style.display = 'block'; })
+        .catch(function() { fallback.style.display = 'flex'; });
+    })();
+  </script>
+</body>
+</html>
