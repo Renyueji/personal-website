@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="app-layout">
@@ -15,12 +15,17 @@
       <div class="sidebar-brand">
         <a href="index.html">Renyue Ji</a>
       </div>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <span class="lang-sep">|</span>
+        <button type="button" class="lang-btn" data-lang="zh" aria-label="简体中文">中文</button>
+      </div>
       <nav class="sidebar-nav">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html" class="active">About</a>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="research.html" data-i18n="nav.research">Research</a>
+        <a href="publications.html" data-i18n="nav.publications">Publications</a>
+        <a href="insights.html" data-i18n="nav.insights">Insights</a>
+        <a href="about.html" class="active" data-i18n="nav.about">About</a>
         <a href="data/JI%20RENYUE_CV.pdf" target="_blank">CV</a>
         <a href="https://www.researchgate.net/scientific-contributions/Renyue-Ji-2289470138" target="_blank" rel="noopener">ResearchGate</a>
       </nav>
@@ -30,8 +35,8 @@
     </aside>
 
     <main class="main-content">
-      <h1 class="page-title">About</h1>
-      <p class="page-subtitle">My background and research journey</p>
+      <h1 class="page-title" data-i18n="about.title">About</h1>
+      <p class="page-subtitle" data-i18n="about.subtitle">My background and research journey</p>
 
       <section class="section">
         <div class="about-layout">
@@ -39,13 +44,13 @@
             <canvas id="about-canvas" width="140" height="140" style="display:none; width:140px; height:140px; object-fit:cover; border-radius:12px;"></canvas>
             <a href="data/photos/18446744073086116956835505667.pdf" target="_blank" id="about-photo-fallback" class="photo-placeholder" style="display:none;">
               <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="58" stroke="currentColor" stroke-width="2" opacity="0.3"/><circle cx="60" cy="45" r="18" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M30 110 Q60 75 90 110" stroke="currentColor" stroke-width="2" opacity="0.3" fill="none"/></svg>
-              <span>View photo (PDF)</span>
+              <span data-i18n="nav.viewPhoto">View photo (PDF)</span>
             </a>
           </div>
           <div>
-            <p>My research journey sits at the intersection of Earth sciences, environmental health, and energy transitions—shaped by a simple question: how do the materials beneath our feet shape human health and the future of our planet?</p>
-            <p>I began in coal geology and mineralogy, drawn to the Late Permian coals of Yunnan. That work led me to <strong>Xuan Wei</strong>, a county with among the highest lung cancer rates in China, especially among women who burn local coal indoors. There, I traced the link between Fe-rich chamosite and berthierine in the coal and carcinogenic mineral particles released during combustion—nanometer-sized particles that trigger oxidative stress and malignant transformation. Understanding that chain drove home how deeply geology and human health are intertwined.</p>
-            <p>Today, I'm based at <strong>The University of Hong Kong</strong>, where my work has expanded to designing solutions: pathways to scale green hydrogen and CCUS in China, including integrated cement-methanol co-production. For more details, see my <a href="data/JI%20RENYUE_CV.pdf" target="_blank">CV</a>.</p>
+            <p data-i18n="about.para1">My research journey sits at the intersection of Earth sciences, environmental health, and energy transitions—shaped by a simple question: how do the materials beneath our feet shape human health and the future of our planet?</p>
+            <p><span data-i18n="about.para2">I began in coal geology and mineralogy, drawn to the Late Permian coals of Yunnan. That work led me to</span> <strong data-i18n="about.para2XuanWei">Xuan Wei</strong><span data-i18n="about.para2rest">, a county with among the highest lung cancer rates in China, especially among women who burn local coal indoors. There, I traced the link between Fe-rich chamosite and berthierine in the coal and carcinogenic mineral particles released during combustion—nanometer-sized particles that trigger oxidative stress and malignant transformation. Understanding that chain drove home how deeply geology and human health are intertwined.</span></p>
+            <p><span data-i18n="about.para3">Today, I'm based at</span> <strong data-i18n="about.para3HKU">The University of Hong Kong</strong><span data-i18n="about.para3rest">, where my work has expanded to designing solutions: pathways to scale green hydrogen and CCUS in China, including integrated cement-methanol co-production. For more details, see my</span> <a href="data/JI%20RENYUE_CV.pdf" target="_blank" data-i18n="about.para3CV">CV</a><span data-i18n="about.para3dot">.</span></p>
           </div>
         </div>
       </section>
@@ -53,53 +58,41 @@
       <section class="section">
         <div class="about-visuals">
           <div class="visual-card">
-            <div class="visual-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 4L4 10v12l12 6 12-6V10L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3>Coal & Mineralogy</h3>
-            <p>Late Permian coals, chamosite, berthierine, authigenic minerals</p>
+            <div class="visual-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4L4 10v12l12 6 12-6V10L16 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <h3 data-i18n="about.coal">Coal & Mineralogy</h3>
+            <p data-i18n="about.coalDesc">Late Permian coals, chamosite, berthierine, authigenic minerals</p>
           </div>
           <div class="visual-card">
-            <div class="visual-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Environmental Health</h3>
-            <p>Xuan Wei lung cancer, indoor combustion, oxidative stress</p>
+            <div class="visual-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 data-i18n="about.health">Environmental Health</h3>
+            <p data-i18n="about.healthDesc">Xuan Wei lung cancer, indoor combustion, oxidative stress</p>
           </div>
           <div class="visual-card">
-            <div class="visual-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2v4M16 26v4M4 16h4M24 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Energy Transitions</h3>
-            <p>Green hydrogen, CCUS, cement-methanol co-production</p>
+            <div class="visual-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2v4M16 26v4M4 16h4M24 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 data-i18n="about.energy">Energy Transitions</h3>
+            <p data-i18n="about.energyDesc">Green hydrogen, CCUS, cement-methanol co-production</p>
           </div>
         </div>
       </section>
 
       <section class="section">
         <div class="about-timeline">
-          <h3>Path</h3>
+          <h3 data-i18n="about.path">Path</h3>
           <div class="timeline-steps">
-            <div class="timeline-step"><span class="timeline-dot"></span><span>Earth sciences & coal mineralogy</span></div>
-            <div class="timeline-step"><span class="timeline-dot"></span><span>Xuan Wei: linking minerals to lung cancer</span></div>
-            <div class="timeline-step"><span class="timeline-dot"></span><span>Decarbonization & green energy pathways</span></div>
+            <div class="timeline-step"><span class="timeline-dot"></span><span data-i18n="about.path1">Earth sciences & coal mineralogy</span></div>
+            <div class="timeline-step"><span class="timeline-dot"></span><span data-i18n="about.path2">Xuan Wei: linking minerals to lung cancer</span></div>
+            <div class="timeline-step"><span class="timeline-dot"></span><span data-i18n="about.path3">Decarbonization & green energy pathways</span></div>
           </div>
         </div>
       </section>
 
       <footer class="site-footer">
-        <p>© 2025 Renyue Ji</p>
+        <p data-i18n="footer.copyright">© 2025 Renyue Ji</p>
       </footer>
     </main>
   </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     (function() {
       var canvas = document.getElementById('about-canvas');
@@ -119,6 +112,9 @@
         .then(function() { canvas.style.display = 'block'; })
         .catch(function() { fallback.style.display = 'flex'; });
     })();
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { window.i18n && window.i18n.setLang(btn.getAttribute('data-lang')); });
+    });
   </script>
 </body>
 </html>

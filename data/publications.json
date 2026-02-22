@@ -2,20 +2,26 @@
   "publications": [
     {
       "title": "Acicular berthierine-chamosite in coal and lung cancer tissues of Xuan Wei, China",
+      "title_zh": "宣威煤及肺癌组织中的针状鳞绿泥石-鲕绿泥石",
       "authors": [],
       "venue": "HKU Scholars Hub",
+      "venue_zh": "港大学术库",
       "year": "",
       "summary": "Investigates the occurrence of acicular berthierine-chamosite minerals in coal from Xuan Wei, Yunnan—a region with among the highest lung cancer rates in China. Links Fe-rich chamosite particles in domestic coal combustion to carcinogenic mechanisms and oxidative stress in bronchial epithelial cells.",
+      "summary_zh": "研究云南宣威煤中针状鳞绿泥石-鲕绿泥石矿物的赋存，该地区为中国肺癌率最高的区域之一。探讨家用燃煤中富铁鲕绿泥石颗粒与致癌机制及支气管上皮细胞氧化应激的关系。",
       "pdf": "data/Acicular%20berthierine-chamosite%20in%20coal%20and%20lung%20cancer%20tissues%20of%20Xuan%20Wei,%20China.pdf",
       "url": "https://hub.hku.hk/handle/10722/279747",
       "doi": ""
     },
     {
       "title": "Scaling green hydrogen and CCUS via cement-methanol co-production in China",
+      "title_zh": "中国水泥-甲醇联产规模化绿氢与CCUS",
       "authors": [],
       "venue": "Energy & Environmental Science",
+      "venue_zh": "能源与环境科学",
       "year": "2026",
       "summary": "Proposes integrated cement-methanol co-production pathways to scale green hydrogen and carbon capture, utilization, and storage (CCUS) in China, addressing decarbonization of industry and energy sectors.",
+      "summary_zh": "提出中国水泥-甲醇联产综合路径以规模化绿氢与碳捕集利用封存（CCUS），应对工业和能源部门的脱碳需求。",
       "pdf": "data/EES_zheshen_2026.pdf",
       "url": "https://pubs.rsc.org/en/content/articlelanding/2026/ee/d5ee07379k",
       "doi": ""

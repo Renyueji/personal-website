@@ -1,41 +1,51 @@
-// Load publications from data/publications.json if available
+// Load publications from data/publications.json
+function getLang() {
+  return (window.i18n && window.i18n.getLang()) ? window.i18n.getLang() : 'en';
+}
+
 async function loadPublications() {
   try {
-    const res = await fetch('data/publications.json');
+    var res = await fetch('data/publications.json');
     if (res.ok) {
-      const data = await res.json();
+      var data = await res.json();
       renderPublications(data.publications || []);
     }
-  } catch {
-    // File not found or invalid - leave placeholder
-  }
+  } catch (e) {}
 }
 
 function renderPublications(publications) {
-  const container = document.getElementById('publications-container');
+  var container = document.getElementById('publications-container');
   if (!container || !publications.length) return;
 
-  container.innerHTML = publications
-    .map((p) => {
-      const authors = Array.isArray(p.authors) ? p.authors.join(', ') : (p.authors || '');
-      const venue = p.venue || p.journal || '';
-      const year = p.year || '';
-      const meta = [venue, year].filter(Boolean).join(', ');
-      const url = p.url || (p.doi ? `https://doi.org/${p.doi}` : '');
-      const titleEl = url ? `<a href="${url}" target="_blank" rel="noopener">${p.title}</a>` : p.title;
-      const pdfLink = p.pdf ? `<a href="${p.pdf}" target="_blank" rel="noopener" class="pdf-link">[PDF]</a>` : '';
-      const summary = p.summary ? `<p class="publication-summary">${p.summary}</p>` : '';
+  var lang = getLang();
+  var pdfLabel = lang === 'zh' ? '[PDF]' : '[PDF]';
 
-      return `
-        <div class="publication-item">
-          <div class="publication-title">${titleEl} ${pdfLink}</div>
-          ${authors ? `<div class="publication-meta">${authors}</div>` : ''}
-          ${meta ? `<div class="publication-meta">${meta}</div>` : ''}
-          ${summary}
-        </div>
-      `;
+  container.innerHTML = publications
+    .map(function(p) {
+      var title = (lang === 'zh' && p.title_zh) ? p.title_zh : p.title;
+      var summary = (lang === 'zh' && p.summary_zh) ? p.summary_zh : p.summary;
+      var venue = (lang === 'zh' && p.venue_zh) ? p.venue_zh : (p.venue || p.journal || '');
+      var authors = Array.isArray(p.authors) ? p.authors.join(', ') : (p.authors || '');
+      var year = p.year || '';
+      var meta = [venue, year].filter(Boolean).join(', ');
+      var url = p.url || (p.doi ? 'https://doi.org/' + p.doi : '');
+      var titleEl = url ? '<a href="' + url + '" target="_blank" rel="noopener">' + title + '</a>' : title;
+      var pdfLink = p.pdf ? '<a href="' + p.pdf + '" target="_blank" rel="noopener" class="pdf-link">' + pdfLabel + '</a>' : '';
+      var summaryEl = summary ? '<p class="publication-summary">' + summary + '</p>' : '';
+
+      return '<div class="publication-item">' +
+        '<div class="publication-title">' + titleEl + ' ' + pdfLink + '</div>' +
+        (authors ? '<div class="publication-meta">' + authors + '</div>' : '') +
+        (meta ? '<div class="publication-meta">' + meta + '</div>' : '') +
+        summaryEl +
+        '</div>';
     })
     .join('');
 }
 
-document.addEventListener('DOMContentLoaded', loadPublications);
+function init() {
+  loadPublications();
+  document.addEventListener('langchange', function() { loadPublications(); });
+}
+
+document.addEventListener('DOMContentLoaded', init);

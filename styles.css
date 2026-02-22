@@ -8,7 +8,7 @@
   --color-border: #e8e8e8;
   --color-accent: #2563eb;
   --color-accent-hover: #1d4ed8;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-serif: 'Source Serif 4', Georgia, serif;
   --sidebar-width: 260px;
   --content-max: 720px;
@@ -56,7 +56,38 @@ body {
 }
 
 .sidebar-brand {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.lang-btn:hover {
+  color: var(--color-accent);
+}
+
+.lang-btn.active {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.lang-sep {
+  color: var(--color-border);
+  font-size: 0.8rem;
 }
 
 .sidebar-brand a {

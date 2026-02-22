@@ -1,35 +1,44 @@
 // Load insights (essays and reports) from data/insights.json
+function getLang() {
+  return (window.i18n && window.i18n.getLang()) ? window.i18n.getLang() : 'en';
+}
+
 async function loadInsights() {
   try {
-    const res = await fetch('data/insights.json');
+    var res = await fetch('data/insights.json');
     if (res.ok) {
-      const data = await res.json();
+      var data = await res.json();
       renderInsights(data.insights || []);
     }
-  } catch {
-    // File not found or invalid – keep placeholder
-  }
+  } catch (e) {}
 }
 
 function renderInsights(insights) {
-  const container = document.getElementById('insights-container');
+  var container = document.getElementById('insights-container');
   if (!container || !insights.length) return;
 
-  container.innerHTML = insights
-    .map((i) => {
-      const url = i.url || '';
-      const title = url ? `<a href="${url}" target="_blank" rel="noopener">${i.title}</a>` : `<span>${i.title}</span>`;
-      const meta = i.date ? `<div class="meta">${i.date}</div>` : '';
+  var lang = getLang();
 
-      return `
-        <div class="insight-card">
-          <h3>${title}</h3>
-          ${meta}
-          <p>${i.summary || ''}</p>
-        </div>
-      `;
+  container.innerHTML = insights
+    .map(function(i) {
+      var title = (lang === 'zh' && i.title_zh) ? i.title_zh : i.title;
+      var summary = (lang === 'zh' && i.summary_zh) ? i.summary_zh : (i.summary || '');
+      var url = i.url || '';
+      var titleEl = url ? '<a href="' + url + '" target="_blank" rel="noopener">' + title + '</a>' : '<span>' + title + '</span>';
+      var meta = i.date ? '<div class="meta">' + i.date + '</div>' : '';
+
+      return '<div class="insight-card">' +
+        '<h3>' + titleEl + '</h3>' +
+        meta +
+        '<p>' + summary + '</p>' +
+        '</div>';
     })
     .join('');
 }
 
-document.addEventListener('DOMContentLoaded', loadInsights);
+function init() {
+  loadInsights();
+  document.addEventListener('langchange', function() { loadInsights(); });
+}
+
+document.addEventListener('DOMContentLoaded', init);

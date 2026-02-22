@@ -2,8 +2,10 @@
   "insights": [
     {
       "title": "Add your first essay or report",
+      "title_zh": "添加您的第一篇随笔或报告",
       "date": "2025",
       "summary": "Edit data/insights.json to add your essays and reports. Each entry can have title, date, summary, and url.",
+      "summary_zh": "编辑 data/insights.json 以添加您的随笔和报告。每个条目可包含标题、日期、摘要和链接。",
       "url": ""
     }
   ]
