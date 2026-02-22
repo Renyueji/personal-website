@@ -1,0 +1,12 @@
+{
+  "publications": [
+    {
+      "title": "Add your publication title here",
+      "authors": ["Renyue Ji", "Co-author 1", "Co-author 2"],
+      "venue": "Conference or Journal Name",
+      "year": "2025",
+      "url": "https://www.researchgate.net/...",
+      "doi": ""
+    }
+  ]
+}
